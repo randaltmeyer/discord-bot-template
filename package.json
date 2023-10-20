@@ -23,12 +23,15 @@
 		"discord.js": "^14.13.0"
 	},
 	"scripts": {
-		"NOTE-1": "echo 'npm start; npm stop; npm restart'",
+		"NOTE-1": "echo 'npm start; npm stop; npm restart; npm run start-prod'",
 		"start": "pm2 start pm2.config.cjs",
 		"stop": "pm2 stop pm2.config.cjs",
 		"restart": "pm2 restart pm2.config.cjs",
 
-		"NOTE-2": "echo 'npm run delete; npm run build; npm run build-full'",
+		"NOTE-2": "echo 'npm run start-prod'",
+		"start-prod": "pm2 start pm2.config.cjs --env production",
+
+		"NOTE-3": "echo 'npm run delete; npm run build; npm run build-full'",
 		"delete": "pm2 delete pm2.config.cjs",
 		"build": "tsc --build",
 		"postbuild": "echo 'build done.'",
