@@ -1,4 +1,3 @@
-import { isProd } from "../env";
 
 /**
  * @todo figure out better logging so we can have .debug in dev but not in stable.
@@ -39,10 +38,11 @@ export function addLogHandler(level: LogLevel, handler: Function): void {
 export function getLogger(): Logger {
 	if (!_logger) {
 
+
 		/** Single logging function to ensure we don't duplicate code deciding which environment logs what. */
 		function log(level: LogLevel, ...args: any[]) {
 			// ignore certain events based on environment
-			if (isProd()) {
+			if (process.env["NODE_ENV"] === "production") {
 				if (["silly", "debug", "verbose"].includes(level)) return;
 			}
 

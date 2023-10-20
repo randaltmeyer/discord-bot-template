@@ -4,6 +4,6 @@ function isNotProduction(value: string | number | null | undefined): value is st
 	return value !== "production";
 }
 
-export function isDev(): boolean {
-	return getFromProcess(isNotProduction, "env");
+export function isDevMode(): boolean {
+	return getFromProcess(isNotProduction, "NODE_ENV");
 }
