@@ -1,0 +1,38 @@
+{
+	"name": "discord-bot-template",
+	"version": "0.0.0",
+	"description": "A simple setup to start working on a Discord bot.",
+	"keywords": ["discord", "bot", "template"],
+	"homepage": "https://github.com/USERNAME/REPO",
+	"bugs": {
+		"url": "https://github.com/USERNAME/REPO/issues",
+		"email": "bugs@discord.bot"
+	},
+	"license": "UNLICENSED",
+	"private": true,
+	"author": "Bot Builder <bot.builder@gmail.com> (http://bot-builder.com)",
+	"contributors": [],
+	"funding": {
+		"type": "patreon",
+		"url": "https://www.patreon.com/PATREON_USERNAME"
+	},
+	"repository": "github:USERNAME/REPO",
+	"type": "module",
+	"dependencies": {
+		"@types/node": "^18.18.6",
+		"discord.js": "^14.13.0"
+	},
+	"scripts": {
+		"NOTE-1": "echo 'npm start; npm stop; npm restart'",
+		"start": "pm2 start pm2.config.cjs",
+		"stop": "pm2 stop pm2.config.cjs",
+		"restart": "pm2 restart pm2.config.cjs",
+
+		"NOTE-2": "echo 'npm run delete; npm run build; npm run build-full'",
+		"delete": "pm2 delete pm2.config.cjs",
+		"build": "tsc --build",
+		"postbuild": "echo 'build done.'",
+		"prebuild-full": "tsc --build --clean",
+		"build-full": "npm run build"
+	}
+}
